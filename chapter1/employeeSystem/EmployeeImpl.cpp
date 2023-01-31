@@ -1,12 +1,14 @@
 module;
 #include <iostream>
 #include "../format"
+#include<string>
 
 module employee;
 using namespace std;
 
 namespace Record {
-	Employee::Employee(const string& firstName, const string& lastName)
+	Employee::Employee(){};
+	Employee::Employee(const std::string& firstName, const std::string& lastName)
 		: m_firstName { firstName }, m_lastName { lastName } {
 	}
 
@@ -39,15 +41,15 @@ namespace Record {
 		cout << endl;
 	}
 
-	void Employee::setFirstName(const string& firstName) {
+	void Employee::setFirstName(const std::string& firstName) {
 		m_firstName = firstName;
 	}
 
-	const string& Employee::getFirstName() const{
+	const std::string& Employee::getFirstName() const{
 		return m_firstName;
 	}
 
-	void Employee::setLastName(const string& lastName) {
+	void Employee::setLastName(const std::string& lastName) {
 		m_lastName = lastName;
 	}
 

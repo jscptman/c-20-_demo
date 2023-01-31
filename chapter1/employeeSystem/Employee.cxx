@@ -2,14 +2,15 @@ module;
 #include <string>
 export module employee;
 namespace Record {
-	const int DefaultStartingSalary { 30'000 };
-	export const int DefaultRaiseAndDemeritAmount { 1'000 };
+	int DefaultStartingSalary { 30'000 };
+	export int DefaultRaiseAndDemeritAmount { 1'000 };
 	export class Employee {
 		public:
+			Employee();
 			Employee(const std::string& firstName,
 					 const std::string& lastName);
-			void promote(int raiseAmount = 1'000); // 加薪方法
-			void demote(int demeritAmount = 1'000); // 降薪方法
+			void promote(const int raiseAmount = DefaultRaiseAndDemeritAmount); // 加薪方法
+			void demote(const int demeritAmount = DefaultRaiseAndDemeritAmount); // 降薪方法
 			void hire(); // 雇佣
 			bool isHired() const; // 判断是否雇佣
 			void fire(); // 解雇
@@ -26,7 +27,7 @@ namespace Record {
 			std::string m_firstName;
 			std::string m_lastName;
 			int m_employeeNumber { -1 };
-			int m_salary { 30'000 };
+			int m_salary { DefaultStartingSalary };
 			bool m_hired { false };
 	};
 } 
